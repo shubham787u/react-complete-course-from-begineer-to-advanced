@@ -12,6 +12,7 @@ const Header = () => {
           <a href="/profile">Profile</a>
           <a href="/cart">Cart</a>
           <a href="/contact">Contact</a>
+          
         </nav>
       </div>
     </header>
