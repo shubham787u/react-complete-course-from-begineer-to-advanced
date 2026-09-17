@@ -7,7 +7,10 @@ const ShimmerProduct = () => {
         {Array(30)
           .fill("")
           .map((_, index) => (
-            <div key={index} className="w-65 h-75 bg-gray-100 rounded-md"></div>
+            <div
+              key={index}
+              className="w-65 h-75  bg-gray-100 rounded-md"
+            ></div>
           ))}
       </div>
     </div>

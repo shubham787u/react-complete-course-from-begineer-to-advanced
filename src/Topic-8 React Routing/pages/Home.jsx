@@ -1,8 +1,7 @@
-import React from "react";
 import { useState, useEffect } from "react";
-import ShimmerProduct from "../components/ShimmerProduct";
 import axios from "axios";
-import ErroePage from "../components/ErrorPage";
+import ShimmerProduct from "../components/ShimmerProduct";
+import ErrorPage from "../components/ErrorPage";
 import ProductList from "../components/ProductList";
 import { Link } from "react-router-dom";
 
@@ -24,14 +23,16 @@ const Home = () => {
         setLoading(false);
       }
     };
+
     getAllProducts();
   }, []);
 
   if (loading) return <ShimmerProduct />;
 
   if (isError) return <ErrorPage error={error} />;
+
   return (
-    <div className="w-screen min-h-[calc(100vh-100px)]">
+    <div className="w-screen min-h-[calc(100vh - 100px)]">
       <div className="mx-auto w-screen max-w-300 flex flex-wrap gap-14 p-25">
         {products.map((product) => (
           <Link to={`product/${product.id}`} key={product.id}>

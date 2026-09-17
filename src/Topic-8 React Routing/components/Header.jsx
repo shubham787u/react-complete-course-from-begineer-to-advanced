@@ -14,7 +14,7 @@ const Header = () => {
             to="/shop"
             className={({ isActive }) =>
               isActive
-                ? "bg-blue-400 text-white rounded-xl py-1.5 px-5 "
+                ? "bg-blue-400 text-white rounded-xl py-1.5 px-5"
                 : "py-1.5 px-5"
             }
           >
@@ -25,29 +25,27 @@ const Header = () => {
             to="/profile"
             className={({ isActive }) =>
               isActive
-                ? `bg-blue-400 text-white rounded-xl py-1.5 px-5 `
+                ? `bg-blue-400 text-white rounded-xl py-1.5 px-5`
                 : "py-1.5 px-5"
             }
           >
             Profile
           </NavLink>
-
           <NavLink
             to="/cart"
             className={({ isActive }) =>
               isActive
-                ? `bg-blue-400 text-white rounded-xl py-1.5 px-5 `
+                ? `bg-blue-400 text-white rounded-xl py-1.5 px-5`
                 : "py-1.5 px-5"
             }
           >
             Cart
           </NavLink>
-
           <NavLink
             to="/contact"
             className={({ isActive }) =>
               isActive
-                ? `bg-blue-400 text-white rounded-xl py-1.5 px-5 `
+                ? `bg-blue-400 text-white rounded-xl py-1.5 px-5`
                 : "py-1.5 px-5"
             }
           >

@@ -1,9 +1,9 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { FaUser, FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import ShimmerProduct from "../components/ShimmerProduct";
 import ErrorPage from "../components/ErrorPage";
+import axios from "axios";
+import { FaUser, FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 const ProductPage = () => {
   const [loading, setLoading] = useState(true);
@@ -27,34 +27,35 @@ const ProductPage = () => {
         setLoading(false);
       }
     };
+
     getSingleProduct();
   }, []);
 
   const createReviewStar = (rating = 4) => {
     const total = 5;
+
     return Array.from({ length: total }).map((_, index) => {
-      const starValue = index + 1; //starValue =1
+      const starValue = index + 1; // startValue =1
 
       if (starValue <= Math.floor(rating)) {
+        return <FaStar key={index} className="text-yellow-400" size={22} />;
+      }
+
+      if (starValue === Math.ceil(rating) && rating % 1 !== 0) {
         return (
           <FaStarHalfAlt key={index} className="text-yellow-400" size={22} />
         );
       }
-      if (starValue === Math.ceil(rating) && rating % 1 !== 0) {
-        return (
-          <FaStarHalfAlt key={index} className="text-yellow-400 size={22}" />
-        );
-      }
+
       return <FaRegStar key={index} className="text-gray-300" size={22} />;
     });
   };
-
   if (loading) return <ShimmerProduct />;
 
   if (isError) return <ErrorPage error={error} />;
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <div className="min-h-screen max-w-300  mx-auto flex flex-col flex-wrap py-20">
         <div className="h-full max-h-115 flex justify-between items-start flex-wrap">
           <div className="relative w-full max-w-130 h-115 border-2 border-gray-300 rounded-2xl p-6">
@@ -67,6 +68,7 @@ const ProductPage = () => {
               {response.category}
             </div>
           </div>
+
           <div className="w-full max-w-135 h-115 p-4">
             <div className="text-3xl font-semibold tracking-wider">
               {response.title}
@@ -106,7 +108,6 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
-
         <div className="w-full h-120 flex justify-evenly items-center">
           {response.reviews.map((review, index) => {
             return (
