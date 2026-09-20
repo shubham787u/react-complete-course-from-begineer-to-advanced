@@ -67,7 +67,7 @@ const Home = () => {
 
       <div className="mx-auto w-screen max-w-300 flex justify-center flex-wrap gap-14 p-25">
         {products.map((product) => (
-          <Link to={`product/${product.id}`} key={product.id}>
+          <Link to={`/product/${product.id}`} key={product.id}>
             <ProductList {...product} />
           </Link>
         ))}

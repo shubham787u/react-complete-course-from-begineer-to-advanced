@@ -8,18 +8,38 @@ import Shop from "./Topic-8 React Routing/pages/Shop";
 import Profile from "./Topic-8 React Routing/pages/Profile";
 import Cart from "./Topic-8 React Routing/pages/Cart";
 import Contact from "./Topic-8 React Routing/pages/Contact";
+import ProductPage from "./Topic-8 React Routing/pages/ProductPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    //it is used for Outlet
     children: [
-      //! due to Outlet Componets,
-      { index: true, element: <Home /> },
-      { path: "/shop", element: <Shop /> },
-      { path: "/profile", element: <Profile /> },
-      { path: "/cart", element: <Cart /> },
-      { path: "/contact", element: <Contact /> },
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/shop",
+        element: <Shop />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/product/:id",
+        element: <ProductPage />,
+      },
     ],
   },
   {
