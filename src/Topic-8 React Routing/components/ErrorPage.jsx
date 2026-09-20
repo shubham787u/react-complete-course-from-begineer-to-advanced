@@ -4,7 +4,7 @@ const ErrorPage = (props) => {
   return (
     <div>
       <h3>Error Error Error</h3>
-      <h4>Error message : {props?.error?.message}</h4>
+      <h4>Error Message: {props?.error?.message}</h4>
     </div>
   );
 };

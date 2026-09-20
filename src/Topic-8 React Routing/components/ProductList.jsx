@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductList = ({ id, images, title, price, description, category }) => {
+const ProductList = ({ _id, images, title, price, description, category }) => {
   const customizedDescription = () =>
     description.length > 5
       ? description.split(" ").slice(0, 5).join(" ")
