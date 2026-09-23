@@ -1,6 +1,7 @@
 import React from "react";
 
-const ProductList = ({ id, images, title, price, description, category }) => {
+const ProductList = (props) => {
+  const { id, images, title, price, description, category } = props;
   const customizedDescription = () =>
     description.length > 5
       ? description.split(" ").slice(0, 5).join(" ")
